@@ -46,7 +46,7 @@ Ejercicio 2
 		
 IMPORTANTE
 ----------
-Notas sobre el ejercicio 2:
+	Notas sobre el ejercicio 2:
 		Debido a un problema de conectividad, he optado por embeber los datos fuente.
 		He considerado esta opción para poder subir una versión funcional,
 		ya que considero este "GET" la parte menos importante del ejercicio.
