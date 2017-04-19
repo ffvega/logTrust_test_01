@@ -1,0 +1,378 @@
+<!--
+	This is the source file for the "Hello World of AJAX" tutorial
+
+	You may use this code in your own projects as long as this 
+	copyright is left	in place.  All code is provided AS-IS.
+	This code is distributed in the hope that it will be useful,
+ 	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+	Please visit http://www.DynamicAJAX.com for more great AJAX
+	source code and tutorials.
+
+	Copyright 2006 Ryan Smith / 345 Technical / 345 Group.
+-->
+<html>
+	<head>
+		<title>Ejercicio_2</title>
+		<!---->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.src.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script id="json1" type="application/json">
+		[{"d":1435708800000,"cat":"Cat 1","value":832.803815816826},{"d":1435795200000,"cat":"Cat 1","value":388.91650675134025},{"d":1435881600000,"cat":"Cat 1","value":935.6381772249989},{"d":1435968000000,"cat":"Cat 1","value":54.70066995525236},{"d":1436054400000,"cat":"Cat 1","value":181.3457667464815},{"d":1436140800000,"cat":"Cat 1","value":891.9970685394005},{"d":1436227200000,"cat":"Cat 1","value":156.20726708880838},{"d":1436313600000,"cat":"Cat 1","value":156.66721551356534},{"d":1436400000000,"cat":"Cat 1","value":909.7010944872941},{"d":1436486400000,"cat":"Cat 1","value":73.86820884286371},{"d":1436572800000,"cat":"Cat 1","value":483.91822481789194},{"d":1436659200000,"cat":"Cat 1","value":925.9092149721159},{"d":1436745600000,"cat":"Cat 1","value":954.5106255695993},{"d":1436832000000,"cat":"Cat 1","value":498.0044924354994},{"d":1436918400000,"cat":"Cat 1","value":958.8539109967946},{"d":1437004800000,"cat":"Cat 1","value":385.928654022915},{"d":1437091200000,"cat":"Cat 1","value":755.5597338114563},{"d":1437177600000,"cat":"Cat 1","value":450.4007026161796},{"d":1437264000000,"cat":"Cat 1","value":962.9791819847624},{"d":1437350400000,"cat":"Cat 1","value":757.4314771044259},{"d":1437436800000,"cat":"Cat 1","value":545.2084232134158},{"d":1437523200000,"cat":"Cat 1","value":521.4648537692364},{"d":1437609600000,"cat":"Cat 1","value":34.674875415649396},{"d":1437696000000,"cat":"Cat 1","value":662.2207051507953},{"d":1437782400000,"cat":"Cat 1","value":736.7797048558843},{"d":1437868800000,"cat":"Cat 1","value":626.3574952615618},{"d":1437955200000,"cat":"Cat 1","value":690.7452476794775},{"d":1438041600000,"cat":"Cat 1","value":480.16054115364005},{"d":1438128000000,"cat":"Cat 1","value":387.61453636961505},{"d":1435708800000,"cat":"Cat 2","value":753.122250791729},{"d":1435795200000,"cat":"Cat 2","value":13.676503223362113},{"d":1435881600000,"cat":"Cat 2","value":30.734444860955},{"d":1435968000000,"cat":"Cat 2","value":453.50641730664034},{"d":1436054400000,"cat":"Cat 2","value":244.93298817945174},{"d":1436140800000,"cat":"Cat 2","value":47.546178391388864},{"d":1436227200000,"cat":"Cat 2","value":860.4475340310145},{"d":1436313600000,"cat":"Cat 2","value":322.11452912784864},{"d":1436400000000,"cat":"Cat 2","value":879.1905022083611},{"d":1436486400000,"cat":"Cat 2","value":914.8967756722712},{"d":1436572800000,"cat":"Cat 2","value":332.2398391118686},{"d":1436659200000,"cat":"Cat 2","value":694.1762969168528},{"d":1436745600000,"cat":"Cat 2","value":629.6731538669327},{"d":1436832000000,"cat":"Cat 2","value":434.4402006973451},{"d":1436918400000,"cat":"Cat 2","value":464.10713082805177},{"d":1437004800000,"cat":"Cat 2","value":399.06713737990395},{"d":1437091200000,"cat":"Cat 2","value":932.7878971239559},{"d":1437177600000,"cat":"Cat 2","value":288.3355893892001},{"d":1437264000000,"cat":"Cat 2","value":997.2088187950905},{"d":1437350400000,"cat":"Cat 2","value":499.3260184576454},{"d":1437436800000,"cat":"Cat 2","value":505.03957419998534},{"d":1437523200000,"cat":"Cat 2","value":384.46123972718004},{"d":1437609600000,"cat":"Cat 2","value":891.481515590808},{"d":1437696000000,"cat":"Cat 2","value":194.79397713430458},{"d":1437782400000,"cat":"Cat 2","value":828.4062782123218},{"d":1437868800000,"cat":"Cat 2","value":250.32742344663973},{"d":1437955200000,"cat":"Cat 2","value":761.0020823550605},{"d":1438041600000,"cat":"Cat 2","value":855.9208100200153},{"d":1438128000000,"cat":"Cat 2","value":672.6675684797963},{"d":1435708800000,"cat":"Cat 3","value":16.585326813220558},{"d":1435795200000,"cat":"Cat 3","value":771.0222724680493},{"d":1435881600000,"cat":"Cat 3","value":351.8240947263009},{"d":1435968000000,"cat":"Cat 3","value":206.1866361636775},{"d":1436054400000,"cat":"Cat 3","value":384.34654669612445},{"d":1436140800000,"cat":"Cat 3","value":807.156456830342},{"d":1436227200000,"cat":"Cat 3","value":130.2205496436364},{"d":1436313600000,"cat":"Cat 3","value":293.59817475243966},{"d":1436400000000,"cat":"Cat 3","value":641.947450418967},{"d":1436486400000,"cat":"Cat 3","value":327.85844494938044},{"d":1436918400000,"cat":"Cat 3","value":807.9617676645013},{"d":1437004800000,"cat":"Cat 3","value":808.4323966551548},{"d":1437091200000,"cat":"Cat 3","value":925.0607423261954},{"d":1437177600000,"cat":"Cat 3","value":820.0779172639723},{"d":1437264000000,"cat":"Cat 3","value":654.3295205658277},{"d":1437350400000,"cat":"Cat 3","value":759.4314771500334},{"d":1437436800000,"cat":"Cat 3","value":451.7156914242959},{"d":1437523200000,"cat":"Cat 3","value":848.4514701634458},{"d":1437609600000,"cat":"Cat 3","value":539.6304453153878},{"d":1437696000000,"cat":"Cat 3","value":753.8344909718677},{"d":1437782400000,"cat":"Cat 3","value":496.1408631151891},{"d":1437868800000,"cat":"Cat 3","value":80.45121077442818},{"d":1437955200000,"cat":"Cat 3","value":803.196861347639},{"d":1438041600000,"cat":"Cat 3","value":327.66167934350386},{"d":1438128000000,"cat":"Cat 3","value":565.9717369552135},{"d":1435708800000,"cat":"Cat 4","value":19.05026950488753},{"d":1435795200000,"cat":"Cat 4","value":438.0381800889961},{"d":1435881600000,"cat":"Cat 4","value":973.3669131604008},{"d":1435968000000,"cat":"Cat 4","value":217.1761172583413},{"d":1436054400000,"cat":"Cat 4","value":483.74620006701275},{"d":1436140800000,"cat":"Cat 4","value":473.3377473404905},{"d":1436227200000,"cat":"Cat 4","value":547.1548513493696},{"d":1436313600000,"cat":"Cat 4","value":560.8486530031238},{"d":1436745600000,"cat":"Cat 4","value":190.35982746542834},{"d":1436832000000,"cat":"Cat 4","value":485.7585869858512},{"d":1437782400000,"cat":"Cat 4","value":181.60143598874035},{"d":1438128000000,"cat":"Cat 4","value":782.8190301747167}]
+		</script>
+		<script id="json2" type="application/json">
+		[{"myDate":"2015-06-02","categ":"CAT 1","val":46.300059172697175},{"myDate":"2015-06-15","categ":"CAT 1","val":92.41149931632995},{"myDate":"2015-06-19","categ":"CAT 3","val":11.023899406944393},{"myDate":"2015-06-25","categ":"CAT 3","val":94.65953012432111},{"myDate":"2015-06-22","categ":"CAT 3","val":91.0125389570359},{"myDate":"2015-06-20","categ":"CAT 3","val":94.29993590604377},{"myDate":"2015-06-08","categ":"CAT 1","val":49.07981716102785},{"myDate":"2015-06-26","categ":"CAT 3","val":41.643530261296036},{"myDate":"2015-06-19","categ":"CAT 1","val":26.87733676351676},{"myDate":"2015-06-27","categ":"CAT 3","val":72.926691215459},{"myDate":"2015-06-06","categ":"CAT 3","val":92.83072335206866},{"myDate":"2015-06-23","categ":"CAT 1","val":81.21930917296001},{"myDate":"2015-06-26","categ":"CAT 1","val":91.1963295653523},{"myDate":"2015-06-13","categ":"CAT 1","val":15.291822526781162},{"myDate":"2015-06-01","categ":"CAT 1","val":74.91340610529366},{"myDate":"2015-06-22","categ":"CAT 1","val":74.75409105317729},{"myDate":"2015-06-11","categ":"CAT 1","val":24.29701863994986},{"myDate":"2015-06-16","categ":"CAT 1","val":9.465747446816298},{"myDate":"2015-06-08","categ":"CAT 3","val":31.273994175467166},{"myDate":"2015-06-23","categ":"CAT 3","val":1.0256787445375615},{"myDate":"2015-06-05","categ":"CAT 3","val":0.3253988527121887},{"myDate":"2015-06-24","categ":"CAT 3","val":3.6381013057047884},{"myDate":"2015-06-17","categ":"CAT 1","val":1.340198294293704},{"myDate":"2015-06-14","categ":"CAT 1","val":51.12819449302097},{"myDate":"2015-06-09","categ":"CAT 3","val":40.86583930566705},{"myDate":"2015-06-21","categ":"CAT 3","val":98.64612650331557},{"myDate":"2015-06-20","categ":"CAT 1","val":63.257626499320565},{"myDate":"2015-06-16","categ":"CAT 3","val":56.584453500882795},{"myDate":"2015-06-04","categ":"CAT 3","val":57.40345634882333},{"myDate":"2015-06-21","categ":"CAT 1","val":96.80996692117701},{"myDate":"2015-06-15","categ":"CAT 3","val":17.663525151363334},{"myDate":"2015-06-03","categ":"CAT 3","val":11.327755968034303},{"myDate":"2015-06-01","categ":"CAT 3","val":28.505397876893902},{"myDate":"2015-06-10","categ":"CAT 1","val":80.16784066839351},{"myDate":"2015-06-18","categ":"CAT 3","val":19.817938379900113},{"myDate":"2015-06-25","categ":"CAT 1","val":11.66791574498327},{"myDate":"2015-06-07","categ":"CAT 1","val":74.49832916690504},{"myDate":"2015-06-11","categ":"CAT 3","val":72.84852463291571},{"myDate":"2015-06-05","categ":"CAT 1","val":70.70814308763902},{"myDate":"2015-06-06","categ":"CAT 1","val":77.88148521586558},{"myDate":"2015-06-07","categ":"CAT 3","val":98.32817378920366},{"myDate":"2015-06-17","categ":"CAT 3","val":28.626884488581418},{"myDate":"2015-06-27","categ":"CAT 1","val":45.88671925794543},{"myDate":"2015-06-04","categ":"CAT 1","val":43.508066001283076},{"myDate":"2015-06-29","categ":"CAT 1","val":60.75427571415637},{"myDate":"2015-06-28","categ":"CAT 1","val":2.8936442521661165},{"myDate":"2015-06-12","categ":"CAT 3","val":89.80676027437946},{"myDate":"2015-06-14","categ":"CAT 3","val":55.82830504701588},{"myDate":"2015-06-09","categ":"CAT 1","val":92.7916625879253},{"myDate":"2015-06-13","categ":"CAT 3","val":78.22289024808259},{"myDate":"2015-06-29","categ":"CAT 3","val":52.57248209859922},{"myDate":"2015-06-28","categ":"CAT 3","val":68.64417614962962},{"myDate":"2015-06-02","categ":"CAT 3","val":59.82886035213437},{"myDate":"2015-06-24","categ":"CAT 1","val":83.20292638735441},{"myDate":"2015-06-18","categ":"CAT 1","val":85.00176731131985},{"myDate":"2015-06-12","categ":"CAT 1","val":31.561972365719782},{"myDate":"2015-06-10","categ":"CAT 3","val":94.65211432925513},{"myDate":"2015-06-03","categ":"CAT 1","val":67.31913706183693}]
+		</script>
+		<script id="json3" type="application/json">
+		[{"raw":"9OHbc9 O1 WHTxiBPa auwZIVD6 j8jMWWVH UdB6hy 2015-06-18 XF 5xhcx15DD sbYFRPn dyoH1OOIF 6meHw pANknwa2h T imhs24gR5 #CAT 1#","val":39.38690127513058},{"raw":"YCcoeoNR8 T4VSBd0GC fpAepuTD 5A40zJ6 y5bXBb rRxM 2015-06-08 J KA9FicdV BSbvirf #CAT 2#","val":74.10101967551246},{"raw":"thJP4b 2015-06-26 bDes w7iyahba RZ8ycJ55Q #CAT 2#","val":66.76803037123229},{"raw":"nX tSP ABv2AG 2015-06-12 6 Vwb #CAT 2#","val":53.992466763210835},{"raw":"0J4ug jIyQXydtv 2015-06-01 jFbHT9egK7 dXa5uDkZ WU BusedKDK0 rf UcuF0AmFw DgCjaMqc ca1JgBk TI E5tEq6 #CAT 2#","val":23.395346314392796},{"raw":"DAiW7 2015-06-06 zcJU zbXa O FuAM H38XE3B WesRrygD 3I8APsO2i #CAT 1#","val":63.8569758442417},{"raw":"tyMNp sq9lX97aPg 2015-06-21 fQox5DFL KM5mH8pS8w YEOsPD C iNaOc4o5Fi MmtT HUYQHzMt #CAT 1#","val":87.08892087437587},{"raw":"DOGdO 4FDVQcBE b8g0LxpZ0 BjUUv W2W8P5QX lKIYW 2015-06-26 SCU 3 C WrW IogYKTg XCXDF Y Z q9sc #CAT 1#","val":53.65045284124685},{"raw":"cWo 5FqOVq u7L16pp7YE 4lzusgKEcK 2015-06-05 8Y HQ0CWtRjG J1UXsY68 RMidSn K4AvU Ob9L16zC ZN AHL5hgsCab v0uFwm #CAT 2#","val":96.61915450438259},{"raw":"k Rm eI 2015-06-29 d9lZw o0 #CAT 2#","val":64.66150972956137},{"raw":"UT mmj3mM ferzHM b3h50g1z0p aIU 2015-06-03 yFsfJ V9thWBK4 K47 vv7 N9TSip 1k PCa dTfx c1DvwBQMVb e7EW9r #CAT 1#","val":92.60614675663679},{"raw":"9G 0Xb lBodAeE BwEzf 2015-06-13 bQsLfx1 wVc0kBt rgNhMXLXK c6 OOj1 WgbQNSZD2 oPzo LfvbxNyxH 9TlkiXv1hx #CAT 2#","val":30.922552423750172},{"raw":"K v5RrmUurj VKTOA c XqE717ZC VMlpC Dl 2015-06-29 tT 8AYG 5mDbjIBX xiYKgq GHDm eJ9YF cUvIRvNQ 7wVWPUav1k J6FIZc4 #CAT 1#","val":20.1767839242043},{"raw":"Tg G DOpW YRZaI nlvB 2015-06-17 ZYf7 Lzoqg Qxgl9oo W5tnNBiuUW 28d91c 1zuHSS9wzW A3E8lK Y36 #CAT 1#","val":90.24941736779535},{"raw":"7YEKggwKAx t 3GqLcuuY 2015-06-07 Llo8 KgcgGSa8 n2A2eKCTlf V0qC 4lV4 FdcQDJs 7pL6zS wRGiyP Kvh1EqJo5 #CAT 2#","val":68.05799731426629},{"raw":"pTD70xOxXG 2015-06-28 OwoMZoefrR FwTviK P8IY2Ow EQw3im JO9ICltF #CAT 2#","val":90.57933735686947},{"raw":"e1jwRfM6KJ 7KsO vwL3EM P J 2015-06-25 ugHdvG E6v ExOKwFQZpt yW5JsLgwH #CAT 1#","val":26.387739917970677},{"raw":"iytAjmnWG D 2015-06-10 oG4 okChj4GAei SlmkYgw DS 1KyW r6Z HgSVy p XwjKrjVeSd #CAT 2#","val":60.49376144058218},{"raw":"5XOUU 2015-06-27 Oj hQb6oUY Nru12Tsrl tB wzj8G j9PdnoE7J 2vK6 6n #CAT 2#","val":22.268894090890434},{"raw":"hyazFCRUr DCj6p4 T1a 2015-06-06 r MELQM4eWf aXcr xmA4 uMNTEd C #CAT 2#","val":11.889180738447624},{"raw":"3ZiI5lW4Lh 3jdL637p TSWjw5ON3R 2015-06-16 WGxnns0 pqXZesyU7D x dHOMxnQJLg 5zj h99CC1 #CAT 2#","val":89.52119240749239},{"raw":"R kAadaz rs OtSHl bjAi 2015-06-24 fb1cg Yaag 59mDjNk0Z 3bQ7wo Rhnwj3bcz1 ZDRJJRzd9 itoELtTLoV Bo1dZ dpk #CAT 2#","val":59.759158722013204},{"raw":"MyFhbqzR9e pUM 2015-06-16 Auhs s JrSjZD l0G37dGmy T 5NyD52mu4 340tnSQo tzmGNxY M7hq2Idtr #CAT 1#","val":55.827360411322125},{"raw":"lF0m 2015-06-18 utbxq jIkBx4TY1 #CAT 2#","val":10.30331946167049},{"raw":"j RAvF5RbAu 2015-06-24 sl Dv51 MskUoTrVG iWRAqRbs b7 a oZgfTq #CAT 1#","val":32.11402806694006},{"raw":"QQQeR1alr 2015-06-15 Plqgbu ikDlZFe5MD #CAT 2#","val":51.75009532539152},{"raw":"4sUPUGmpxO etnjtJ5fRI FF4L9 2015-06-22 btVH8HcPY yNrXh nOL3a9B ieb7 Fmj 3hXk2Q7Mu x QL #CAT 2#","val":61.87812278858193},{"raw":"Fj5YK1cnkw 1OM mqoq7EN V 2CMLr2Y hlsl GVJSQ6nEO 2015-06-08 xXrp2vypUv TNZLuYfhN9 uNQXF7 NFPmRHf 2RTYVG gGVKobKr 3eT1CkoV8J LLkT #CAT 1#","val":91.47337644564648},{"raw":"g8nwTZI mxgozirWi QCKKXIRuN q0jxBfS8Ml m Zh 2015-06-11 YY8 #CAT 1#","val":6.948655865991693},{"raw":"fc1Yb1rY 2015-06-02 8 #CAT 1#","val":28.03958217326741},{"raw":"0 xf 2015-06-04 F4nWe i3pf j6A qwyR3MNVw #CAT 2#","val":72.27499816403673},{"raw":"RRoW nLSj l29I3 lw6HqNyyo QavxWgHJ y16r 2015-06-11 eaGv5Wd ITFs bD6BtsC O1lz1 #CAT 2#","val":42.1620678220979},{"raw":"ZD bI 3Xl0lhLt X8uMnJ 2015-06-07 Upo5QfonD 7OKhKDKfX 82c i y9Iquh n7A5JQ2 HKLs8AhE #CAT 1#","val":28.32219302898853},{"raw":"V8jeFff 2015-06-20 BpM839 dEQ 1nEn WRrEZALH VlFYg1ePe Stq7UyfwLG smikU B #CAT 2#","val":31.881330330646218},{"raw":"zaV MJLb XLJa0thdw 2015-06-23 6w59sifBz yOF uZ jYb Jh GB J N GWq 5ofmc3wW #CAT 2#","val":30.08779923317664},{"raw":"m1da 2015-06-01 l Ar0IeQBBK 4 #CAT 1#","val":43.71794096159791},{"raw":"XVxwmq9 2015-06-04 4tVJYcn #CAT 1#","val":57.48997225382926},{"raw":"qtlxBh0abh 2015-06-27 rbJKAbk YKIwBEj L ffuQHs7rP jwUchP KTJ jTmddG h #CAT 1#","val":74.26856561400427},{"raw":"fgS6J6X jwOYRdsd 1s8GlFFQ sg0MH0sa u8x3HYN gwu SttVyVjrc 2015-06-05 7cMBgtla O5hUkYv h1yVwxDB lAY0wy0R xKhf1Wd6N4 W1 0lUzzca #CAT 1#","val":43.18931560611268},{"raw":"8PbDyHAOE X4XQ2 AF p0KJn4Byof v4Ra0pQ 2015-06-21 CE5WZal CEFL N umIyJz lIA1frl #CAT 2#","val":52.804057110195515},{"raw":"TEHu2Xb nOVFJqcR 2015-06-19 Td n6jR6t8Vd Lonr 6QRl9 qJhg17nSF4 fkMzl77x #CAT 1#","val":68.02141416662018},{"raw":"RKbSBzxB 0f7I dgFoZDM0Ur rzIn LV3qRvdh Br v0 2015-06-13 QMSNVJO poP9mUxUv 9X mZ xRCGLj iEz #CAT 1#","val":45.25295718093787},{"raw":"RT Jq89 YR0qsI5FtT h0ml 2015-06-23 UwHF IKiopQg nrK8ZRKT z8 uFm #CAT 1#","val":90.83314404907716},{"raw":"TEjY1 2015-06-09 bGTLAZ9 qV ZKvCMTITP YFNqQalgsJ #CAT 2#","val":35.42493446978297},{"raw":"NvF tTlEuLjk dzAJfgaPs PjR 2015-06-02 rt 1 Eu D BSL yeaN2Sn HC5 pE FeCpB2XT M #CAT 2#","val":38.82816133242129},{"raw":"2pDSijYS ykbDb8Ts SjtGrH7 ZBitkr3iXj E1Ig0 09w 2015-06-19 AW hx5 wfRjlHD4B8 LHN lDYtd fbDt YcKEaKvSEl #CAT 2#","val":60.0721946587158},{"raw":"TkodUDoX7 2015-06-14 M11ygT9 iXy9LmL1 rfge5QW9 r0bZ pfPgHW #CAT 1#","val":28.00334715880688},{"raw":"b7fN4sqKya wLC jvT65pVX VMkBfD 2015-06-10 YTyCTK oxdg8Rx52E tA TrkBmlr oQl2DCJKc Lvl 4 Yorp #CAT 1#","val":49.73698235772901},{"raw":"NpWyQF 2015-06-28 KjcC uUuFH JLPy6 1nnsB1 gq #CAT 1#","val":62.039388996868695},{"raw":"g4bC0 Ggh4mvcRYQ Ys0J bV mbGVK0yrom NoK 4jD 2015-06-20 qsjIViBXJ sj jhZI95kcB Azhrnh6i z2Iwps IUZ3r #CAT 1#","val":87.31637095133911},{"raw":"1 I5AGKuL 622eP6cc y6y4R Si7Pq8 ho 2015-06-15 9rYy #CAT 1#","val":2.2542705737938373},{"raw":"6wFip4 hZmp0y KPc U7s0 fHL30q 2015-06-17 bx V3qMI1 VkzCwouY Yotzpg 22 HHK1 IoX GIB7 H #CAT 2#","val":9.750175255015026},{"raw":"G4Xc9991Rb TgjzcOc7 LsM 8ajIm5Zrp APKHRB VGubnpw 2015-06-25 nYGV5n rXH4T qg0xzn Ad u fZdk K uIH #CAT 2#","val":50.499087167516656},{"raw":"GN jz9NWY4 Nphhiy Pwur633 3KQkHPD y 2015-06-14 e KNUsR c2QaScPh w5rY3ePIIf 0BxVwy O 9LezV lTZJX904Bf #CAT 2#","val":53.8096540217563},{"raw":"9ea3G YvJT1 2015-06-12 8PMmvr0 tHui9v #CAT 1#","val":47.62173528601639},{"raw":"alqHZgWgDs 1a8O YJf zXdGt7SQ ew 2015-06-09 WU Ce95J00Gg P Cb zJdr4gVz5Z fZQHMe qQ3P O #CAT 1#","val":75.10236610849115},{"raw":"wTJY crNKR YuEib 2015-06-22 vxz7ZXiad #CAT 1#","val":41.27522219127637},{"raw":"CHCZfl8dVb iAF1sqI 2015-06-03 rM0dh Rqh kNfs1H Z0LR3K6 xZqfc 2C359d foLx LB6c #CAT 2#","val":6.400865852071913}]
+		</script>
+		<!---->
+		<script language="JavaScript" type="text/javascript">
+		
+			//
+			// Class for normalized data
+			// 
+			class ClassNormalized {
+				constructor(date, cat, value) {
+					this.date  = date;
+					this.cat   = cat;
+					this.value = value;
+				}
+			}
+			
+			//
+			// Class for data (only date and value)
+			// For accumulation purposes by date
+			//
+			class ClassData {
+				constructor(date, value) {
+					this.date  = date;
+					this.value = value;
+				}
+			}
+			
+			//
+			// Format JSON data 1
+			//
+			function formatJSON_1(jsonArray){
+				var array = [];
+				
+				for( i=0; i<jsonArray.length; i++){
+					
+					var date = (new Date(jsonArray[i].d)).toISOString();
+					var cat  = jsonArray[i].cat.toUpperCase();
+					var value = parseFloat(jsonArray[i].value);
+					
+					var d = new ClassNormalized(date, cat, value);
+					
+					array.push(d);
+				}
+				
+				return array;
+			}
+			
+			//
+			// Format JSON data 2
+			//
+			function formatJSON_2(jsonArray){
+				var array = [];
+				
+				for( i=0; i<jsonArray.length; i++){
+					
+					var date = (new Date(jsonArray[i].myDate)).toISOString();
+					var cat  = jsonArray[i].categ.toUpperCase();
+					var value = parseFloat(jsonArray[i].val);
+					
+					var d = new ClassNormalized(date, cat, value);
+					
+					array.push(d);
+				}
+				
+				return array;
+			}
+			
+			//
+			// Format JSON data 3
+			//
+			function formatJSON_3(jsonArray){
+			
+				var array = [];
+				
+				for( i=0; i<jsonArray.length; i++){
+					
+					// date
+					var dateRegex = jsonArray[i].raw.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/);
+					var catRegex1 = jsonArray[i].raw.match(/[#][Cc]{1}[Aa]{1}[Tt]{1}[ ][0-9]*[#]/);
+					var catRegex2 = catRegex1[0].match(/[Cc]{1}[Aa]{1}[Tt]{1}[ ][0-9]*/)[0];
+					var catRegex  = catRegex2.toUpperCase();
+					
+					var date = (new Date(dateRegex)).toISOString();
+					var cat  = catRegex;
+					var value = parseFloat(jsonArray[i].val);
+					
+					var d = new ClassNormalized(date, cat, value);
+					
+					array.push(d);
+				}
+				
+				return array;
+			}
+			
+			//
+			// insertion sort
+			// collection is type of ClassData
+			//
+			function insertionSort(collection){
+				for(var i = 1; i < collection.length; i++) {
+					var item = collection[i];
+					var previousPoint = i - 1;
+					while(previousPoint >= 0 && collection[previousPoint].date > item.date) {
+						collection[previousPoint+1] = collection[previousPoint];
+						previousPoint = previousPoint - 1;
+					}
+					collection[previousPoint+1] = item;
+				}
+			}
+			
+			//
+			// Classify elements by category and date
+			// 		array is type of ClassNormalized Array
+			// 		categoryList is type of array [cat,ClassData Array]
+			//
+			function getCategories(categoryList, array){
+				for( i=0; i<array.length; i++){
+					
+					var cat  = array[i].cat;
+					var data = new ClassData(array[i].date, array[i].value);
+
+					var arrayAux = []
+					// existing category
+					if(categoryList[cat] != null){
+						arrayAux = categoryList[cat];
+					}
+
+					arrayAux.push(data);
+					categoryList[cat] = arrayAux;
+				}
+			}
+			
+			//
+			// For each category, accumulate values by date
+			// 		categoryList is type of [cat,ClassData Array]
+			// 		accumulateList is type of array [cat:,[date:,value:]]
+			//
+			function accumulateByDate(accumulateList, categoryList){
+				for ( var cat in categoryList){
+				
+					var dateValueDictAux = [];
+			
+					for(i=0;i<categoryList[cat].length;i++){
+						var date = categoryList[cat][i].date;
+						var value = categoryList[cat][i].value;
+					
+						if(dateValueDictAux[date] == null){
+							dateValueDictAux[date] = value;
+						}
+						else{
+							dateValueDictAux[date] += value;
+						}
+					}
+					accumulateList[cat] = dateValueDictAux;
+				}
+			}
+			
+			//
+			// For each category, accumulate all values
+			//		accumulateList is type of array [cat:,[date:,value:]]
+			//		accumulateCatList is type of array [cat:,value:]
+			//
+			function accumulateByCategory(accumulateCatList, accumulateList){
+				for ( var cat in accumulateList){
+					var value = 0;
+					for (var dat in accumulateList[cat]){
+						value += accumulateList[cat][dat];
+					}
+					
+					accumulateCatList[cat] = value;
+				}
+			}
+			
+			//
+			// Draw Line Chart
+			//
+			function drawLineChart(accumulateGlobalCat){
+			
+				var seriesList = [];
+				var categoryList = [];
+
+				for(var cat in accumulateDateList){
+					var arrayAux = [];
+					for(var date in accumulateDateList[cat]){
+						arrayAux.push(accumulateDateList[cat][date]);
+						categoryList.push(date);
+					}
+					var dataAux = {name:cat,data:arrayAux};
+					seriesList.push(dataAux);
+					
+				}
+			
+				var lineChart = Highcharts.chart('containerLine', {
+					chart: {
+						type: 'line'
+					},
+					title: {
+						text: 'Categories'
+					},
+					xAxis: {
+						categories: categoryList
+					},
+					yAxis: {
+						title: {
+							text: 'Values'
+						}
+					},
+					series: seriesList
+				});
+				
+				return lineChart;
+			}
+			
+			//
+			// Draw Pie Chart
+			//
+			function drawPieChart(accumulateGlobalCat){
+			
+				var dataList = [];
+				var categoryList = [];
+				var totalValue= 0;
+
+				// list categories and total value
+				for(var cat in accumulateGlobalCat){
+					totalValue += accumulateGlobalCat[cat];
+					categoryList.push(cat);
+				}
+
+				// calculate percent value
+				for(var cat in accumulateGlobalCat){
+					var percent = 0;
+					var value = accumulateGlobalCat[cat];
+					
+					percent =  (value * 100)/totalValue;
+					var dataAux = {name:cat,y:percent};
+					dataList.push(dataAux);
+				}
+				/**/
+				var pieChart = Highcharts.chart('containerPie', {
+						chart: {
+							plotBackgroundColor: null,
+							plotBorderWidth: null,
+							plotShadow: false,
+							type: 'pie'
+						},
+						title: {
+							text: 'Categories'
+						},
+						tooltip: {
+							pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+						},
+						plotOptions: {
+							pie: {
+								allowPointSelect: true,
+								cursor: 'pointer',
+								dataLabels: {
+									enabled: true,
+									format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+									style: {
+										color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+									}
+								}
+							}
+						},
+						series: [{
+							name: 'Categories',
+							colorByPoint: true,
+							data:  dataList
+						}]
+					});
+				return pieChart;
+			}
+			
+			
+			//
+			// Parse JSON data into Array
+			//
+		
+			var jsonStr1 = document.getElementById("json1").innerText;
+			var jsonStr2 = document.getElementById("json2").innerText;
+			var jsonStr3 = document.getElementById("json3").innerText;
+		
+			var jsonArray1 = JSON.parse(jsonStr1);
+			var jsonArray2 = JSON.parse(jsonStr2);
+			var jsonArray3 = JSON.parse(jsonStr3);
+			
+			//
+			// Normalize data
+			//
+			
+			var normalizedArray1 = formatJSON_1(jsonArray1);
+			var normalizedArray2 = formatJSON_2(jsonArray2);
+			var normalizedArray3 = formatJSON_3(jsonArray3);
+			
+			//
+			// Classify elements by category
+			// 		type of array [cat,ClassData Array]
+			//
+			
+			var categoryList = [];
+			
+			getCategories(categoryList,normalizedArray1);
+			getCategories(categoryList,normalizedArray2);
+			getCategories(categoryList,normalizedArray3);
+			
+			//
+			// Sort each array by date
+			//
+		
+			for(var cat in categoryList){
+				var arrayAux = categoryList[cat];
+				insertionSort(arrayAux);
+				categoryList[cat] = arrayAux;
+			}
+			
+			//
+			// Accumulate by date (for linear chart)
+			//
+			
+			var accumulateDateList = [];
+			
+			accumulateByDate(accumulateDateList, categoryList);
+
+			//
+			// Accumulate by category (for pie chart)
+			//
+			
+			var accumulateGlobalCat = [];
+			
+			accumulateByCategory(accumulateGlobalCat, accumulateDateList);
+			
+			//
+
+			//
+			// Draw Line Chart
+			//
+			$(function () { 
+				var myLineChart = drawLineChart(accumulateDateList);
+				var myPieChart  = drawPieChart (accumulateGlobalCat);
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+		<!-- Clicking this link initiates the asyncronous request -->
+		<div id="containerLine" style="width:100%; height:400px;"></div>
+		<div id="containerPie" style="width:100%; height:400px;"></div>
+	</body>
+</html>
