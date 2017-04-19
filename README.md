@@ -1,6 +1,6 @@
 Ejercicio 1
 -----------
-El proyecto consiste en un archivo: Ejercicio_1.py
+	El proyecto consiste en un archivo: Ejercicio_1.py
 	Se han creado dos métodos:
 		- perfect:		dado un número, determina si es perfecto, defectivo y abundante, mostrasdo una traza por pantalla indicándolo
 		- perfect_list	dado una lista de números, llama al método perfect con cada uno de ellos.
@@ -10,7 +10,7 @@ El proyecto consiste en un archivo: Ejercicio_1.py
 
 Ejercicio 2
 -----------
-El proyecto consiste en un archivo: Ejercicio_2.html
+	El proyecto consiste en un archivo: Ejercicio_2.html
 	Se han creado los siguientes elementos:
 		- class ClassNormalized: 	clase definida para almacenar los datos normalizados 
 									de los ficheros json.
